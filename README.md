@@ -1,101 +1,114 @@
-# Named Entity Recognition (NER) on News Articles (CoNLL-2003)
+# 🧠 Named Entity Recognition (NER) on News Articles -- CoNLL-2003
 
-This project demonstrates **Named Entity Recognition (NER)** on the CoNLL-2003 English news articles dataset. It uses **spaCy** to extract entities such as **people, organizations, locations, dates, and miscellaneous entities**.  
+This project demonstrates **Named Entity Recognition (NER)** using the
+**CoNLL-2003 English news dataset**. It applies **spaCy pre-trained
+models** to extract entities such as:
 
-The project includes:  
-- Loading and preprocessing the **CoNLL-2003 dataset**  
-- Extracting **ground truth entities** from IOB tags  
-- Applying **spaCy small (`en_core_web_sm`) and medium (`en_core_web_md`) models**  
-- Comparing predicted entities vs. ground truth  
-- Visualizing entities using **displaCy**  
+-   👤 Persons
+-   🏢 Organizations
+-   🌍 Locations
+-   📅 Dates
+-   🏷️ Miscellaneous entities
 
----
+------------------------------------------------------------------------
 
-## Technologies & Libraries
+## 📌 Project Overview
 
-- **Python 3**  
-- **spaCy** – NLP library for Named Entity Recognition  
-- **Pandas** – Data handling  
-- **displaCy** – Visualization of entities  
-- **CoNLL-2003 Dataset** – English news articles for NER  
+Named Entity Recognition (NER) is a Natural Language Processing (NLP)
+task that identifies and classifies key information (entities) in text.
 
----
+In this project, we:
 
-## Installation
+-   Load and preprocess the CoNLL-2003 dataset
+-   Extract ground truth entities from IOB tags
+-   Apply spaCy models:
+    -   `en_core_web_sm`
+    -   `en_core_web_md`
+-   Compare predicted entities vs actual labels
+-   Visualize entities using displaCy
 
-1. Clone the repository:
+------------------------------------------------------------------------
 
-```bash
-git clone https://github.com/<your-username>/NER-News-Articles-CoNLL.git
-cd NER-News-Articles-CoNLL
+## 🛠️ Technologies Used
 
-Install dependencies:
+-   Python 3
+-   spaCy
+-   Pandas
+-   Jupyter Notebook
+-   displaCy
 
+------------------------------------------------------------------------
+
+## 📂 Dataset
+
+**CoNLL-2003 English Dataset**
+
+The dataset contains:
+
+-   News articles
+-   Token-level annotations
+-   IOB entity tags (B-ORG, I-PER, etc.)
+
+Entity Types:
+
+-   PER → Person
+-   ORG → Organization
+-   LOC → Location
+-   MISC → Miscellaneous
+
+------------------------------------------------------------------------
+
+## ⚙️ Installation
+
+``` bash
+git clone https://github.com/<your-username>/NER-News-CoNLL.git
+cd NER-News-CoNLL
+```
+
+``` bash
 pip install spacy pandas jupyter
 python -m spacy download en_core_web_sm
 python -m spacy download en_core_web_md
-Usage
+```
 
-Open the Jupyter notebook NER_CoNLL_spacy.ipynb.
+------------------------------------------------------------------------
 
-Load the CoNLL dataset.
+## ▶️ How to Run
 
-Run the notebook sequentially to:
+1.  Open the notebook file.
+2.  Run cells sequentially.
+3.  The notebook will:
+    -   Load the dataset
+    -   Extract ground truth entities
+    -   Apply spaCy NER models
+    -   Compare results
+    -   Visualize entities
 
-Load and preprocess data
+------------------------------------------------------------------------
 
-Extract ground truth entities
-
-Apply spaCy NER models
-
-Compare predictions with ground truth
-
-Visualize entities using displaCy
-
-Sample Output
+## 🔎 Example
 
 Sentence:
 
 EU rejects German call to boycott British lamb .
 
-Predicted Entities (spaCy small):
+spaCy Prediction (Small Model): - EU → ORG - German → NORP - British →
+NORP
 
-EU → ORG
+Ground Truth: - EU → ORG - German → MISC - British → MISC
 
-German → NORP
+------------------------------------------------------------------------
 
-British → NORP
+## 🚀 Future Improvements
 
-Ground Truth (CoNLL):
+-   Fine-tune spaCy model on full CoNLL dataset
+-   Calculate Precision, Recall, F1-score
+-   Add model performance comparison charts
+-   Deploy as a web application (Streamlit)
 
-EU → ORG
+------------------------------------------------------------------------
 
-German → MISC
+## 👨‍💻 Author
 
-British → MISC
-
-Visualization:
-Entities are highlighted in the sentence using displaCy.
-
-Next Steps / Enhancements
-
-Fine-tune spaCy NER on the full CoNLL dataset for higher accuracy.
-
-Evaluate model using Precision, Recall, F1-score.
-
-Add interactive visualization for multiple sentences.
-
-Deploy NER model as a web application (Streamlit / Flask).
-
-Author
-
-Ahmed Bakr
-
-Python | NLP | Data Science Enthusiast
-
-
----
-
-You can **copy everything above**, create a new **README.md** in your GitHub repo, and paste it.  
-
-If you want, I can also create a **ready-to-copy minimal `requirements.txt`** for your project so users c
+Ahmed Bakr\
+Python \| NLP \| Data Science Enthusiast
